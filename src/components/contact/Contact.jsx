@@ -21,7 +21,7 @@ function useWindowSize() {
 
 export default function Contact() {
   const height = useWindowSize();
-  const appHeight = () => document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+  const appHeight = () => document.documentElement.style.setProperty('--app-height', `${height}px`);
   appHeight();
   return (
     <div className="contact">

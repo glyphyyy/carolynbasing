@@ -19,7 +19,7 @@ function useWindowSize() {
 
 export default function Login() {
     const height = useWindowSize();
-    const appHeight = () => document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+    const appHeight = () => document.documentElement.style.setProperty('--app-height', `${height}px`);
     appHeight();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -47,6 +47,7 @@ export default function Login() {
               <input type="email" onChange={ (e) => setEmail(e.target.value)} required/>
               <label>Password</label>
               <input type="password" onChange={ (e) => setPassword(e.target.value)} required/>
+              <p>{error}</p>
               <input type="submit" value="Sign in" />
           </form>
         </div>

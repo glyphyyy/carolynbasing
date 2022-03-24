@@ -7,7 +7,7 @@ import { serverTimestamp, addDoc, collection } from "firebase/firestore";
 const useStorage = (file) => {
     const [progress, setProgress] = useState(0);
     const [error, setError] = useState(null);
-    const [url, setUrl] = useState(null);
+    const [url] = useState(null);
     const imageCollection = collection(db, "images");
 
     useEffect(() => {
@@ -37,7 +37,7 @@ const useStorage = (file) => {
             }
         );
         
-    }, [file]);
+    }, [file,imageCollection]);
     return { progress, url, error };
 }
 

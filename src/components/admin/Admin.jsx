@@ -50,7 +50,7 @@ export default function Admin() {
             <h1>Image upload</h1>
             <p>To upload and image click the upload button below and navigate to your images location.</p>
             <form>
-                <div className="label-wrap"><img src={arrow}/>Upload<label for="file" class="btn"></label></div>
+                <div className="label-wrap"><img src={arrow} alt="arrow"/>Upload<label for="file" class="btn"></label></div>
                 <input id="file" type="file" style={{visibility:"hidden"}} onChange={changeHandler} />
                 { user && <div className="error"><p>{ error }</p></div> }
                 { file && <div className="file"><p>{ file.name }</p></div> }
@@ -63,7 +63,7 @@ export default function Admin() {
                     <li key={images.id}>
                         <div className="line"/>
                         <div className="img-wrap">
-                            <img src={images.url} />
+                            <img src={images.url} alt="gallery"/>
                         </div>
                         <form>
                             <label for="name">Image name:</label>
