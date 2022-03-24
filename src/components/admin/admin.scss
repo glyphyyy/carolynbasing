@@ -1,0 +1,189 @@
+@import "../../global.scss";
+.admin {
+    padding-top: 80px;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    h1 {
+        margin-top: 20px;
+        font-size: 30px;
+        font-weight: 700;
+        text-align: center;
+        color: $black;
+    }
+
+    p {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 400;
+        color: $black;
+        text-align: center;
+    }
+
+    form {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .label-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 10px;
+            width: 140px;
+            height: 140px;
+            background-color: #70db55;
+            border-radius: 15px;
+            border-style: none;
+            color: white;
+            font-size: 20px;
+            font-weight: 500;
+            text-align: center;
+
+            img {
+                margin-bottom: 10px;
+                height: 30%;
+            }
+
+            label {
+                width: 140px;
+                height: 140px;
+                display: block;
+                position: absolute;
+            }
+        }
+    }
+
+    .btn-wrap {
+        display: flex;
+        
+        button {
+            margin: 10px;
+            width: 140px;
+            height: 80px;
+            background-color: #70db55;
+            border-radius: 15px;
+            border-style: none;
+            color: white;
+            font-size: 20px;
+            font-weight: 500;
+
+            span {
+                display: block;
+            }
+        }
+
+        #log-out {
+            background-color: #e64848;
+        }
+    }
+
+    .images {
+        width: 90%;
+
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 30px;
+            font-weight: 700;
+            text-align: center;
+            color: $black;
+        }
+
+        ul {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            li {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                @media only screen 
+                and (min-device-width : 1000px) {
+                    width: 30em;
+                }
+
+                .line {
+                    margin-bottom: 40px;
+                    width: 60%;
+                    height: 1px;
+                    background-color: rgb(209, 209, 209);
+                    border-radius: 25px;
+                }
+
+                .img-wrap {
+                    width: 100%;
+                    aspect-ratio: 1 / 1;
+        
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: 50% 50%;
+                        top: 0;
+                        left: 0;
+                        margin: auto;
+                        bottom: 0;
+                    }
+                }
+
+                form {
+                    input {
+                        width: 100%;
+                        padding: 12px 20px;
+                        border: .5px solid rgb(182, 182, 182);
+                        border-radius: 10px;
+                        font-size: 18px;
+                        color: $black;
+                    }
+                    
+                    label {
+                        margin-top: 20px;
+                        margin-bottom: 10px;
+                        font-size: 18px;
+                        font-weight: 400;
+                        text-align: center;
+                        color: $black;
+                    }                 
+                }
+
+                .btn-wrap {
+                    margin-top: 20px;
+                    margin-bottom: 30px;
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+        
+                    button {
+                        margin: 10px;
+                        width: 140px;
+                        height: 80px;
+                        background-color: #70db55;
+                        border-radius: 15px;
+                        border-style: none;
+                        color: white;
+                        font-size: 20px;
+                        font-weight: 500;
+
+                        span {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

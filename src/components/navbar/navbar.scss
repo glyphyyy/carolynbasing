@@ -1,0 +1,80 @@
+@import "../../global.scss";
+
+.navbar {
+    height: 80px;
+    width: 100%;
+    background-color: transparent;
+    position: fixed;
+    display: flex;
+    z-index: 20;
+
+    .logo-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 20px;
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: $black;
+            letter-spacing: 3px;
+        }
+        h2 {
+            margin-top: -10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 33px;
+            font-weight: 700;
+            color: $black;
+            letter-spacing: 3px;
+        }
+    }
+
+    .wrapper {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .hamburger {
+            z-index: 20;
+            position: absolute;
+            height: 30px;
+            width: 37px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-right: 20px;
+            cursor: pointer;
+
+            span {
+                width: 100%;
+                height: 4px;
+                background-color: $black;
+                border-radius: 25px;
+                transform-origin: left;
+                transition: all .4s ease;
+            }
+        }
+    }
+    &.active {
+        .hamburger {
+
+            span {
+                &:first-child {
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                &:last-child {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
