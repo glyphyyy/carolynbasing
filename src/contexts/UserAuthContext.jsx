@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState, useContext } from "react";
 import { 
-    createUserWithEmailAndPassword,
+    //createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     signOut,
     onAuthStateChanged
@@ -11,9 +11,9 @@ const userAuthContext = createContext();
 
 export function UserAuthContextProvider({ children }) {
     const [user, setUser] = useState("");
-    function signUp(email, password) {
+    /*function signUp(email, password) {
         return createUserWithEmailAndPassword(auth, email, password);
-    }
+    }*/
     function logIn(email, password) {
         return signInWithEmailAndPassword(auth, email, password);
     }
@@ -29,7 +29,7 @@ export function UserAuthContextProvider({ children }) {
             unsubscribe();
         }
     }, []);
-    return <userAuthContext.Provider value={{ user, signUp, logIn, logOut }}>{children}</userAuthContext.Provider>
+    return <userAuthContext.Provider value={{ user, logIn, logOut }}>{children}</userAuthContext.Provider>
 }
 
 export function useUserAuth() {

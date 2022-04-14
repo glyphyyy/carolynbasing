@@ -27,6 +27,7 @@ export default function Admin() {
 
         }
     };
+    
     const changeHandler = (e) => {
         let selected = e.target.files[0];
 

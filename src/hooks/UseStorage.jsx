@@ -11,6 +11,7 @@ const useStorage = (file) => {
     const imageCollection = collection(db, "images");
 
     useEffect(() => {
+        console.log('use storage effect called');
         const storageRef = ref(projectStorage, file.name);
         const uploadTask = uploadBytesResumable(storageRef, file);
 
@@ -37,7 +38,7 @@ const useStorage = (file) => {
             }
         );
         
-    }, [file,imageCollection]);
+    }, []);
     return { progress, url, error };
 }
 

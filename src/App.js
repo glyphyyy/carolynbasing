@@ -15,9 +15,12 @@ import Signup from './components/signup/Signup';
 import Admin from "./components/admin/Admin";
 import { UserAuthContextProvider } from './contexts/UserAuthContext';
 import Gallery from './components/gallery/Gallery';
+import GalleryModal from './components/galleryModal/GalleryModal';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedImg, setSelectedImg] = useState(null);
+
   return (
     <UserAuthContextProvider>
       <Routes>
@@ -39,7 +42,8 @@ function App() {
         <Contact/></>} />
         <Route path="/gallery" element={<><NavbarAlt menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
         <MenuAlt menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-        <Gallery/></>} />
+        <Gallery setSelectedImg={setSelectedImg} />
+        {selectedImg && <GalleryModal selectedImg={selectedImg} setSelectedImg={setSelectedImg}/>}</>} />
       </Routes>
     </UserAuthContextProvider>
   );
