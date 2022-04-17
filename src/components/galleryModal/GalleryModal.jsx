@@ -9,7 +9,7 @@ export default function GalleryModal({ selectedImg, setSelectedImg }) {
 
     return (
         <div className='gallery-modal' onClick={handleClick}>
-            <img src={selectedImg} alt="image expanded" />
+            <img src={selectedImg} alt="expanded" />
         </div>
     )
 }

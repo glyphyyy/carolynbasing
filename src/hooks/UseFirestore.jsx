@@ -12,7 +12,7 @@ export const UseFirestore = () => {
         onSnapshot(q, (snapshot) => {
           setImages(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))} 
         ),
-      []
+      [q]
     );
 
   return (
