@@ -29,11 +29,19 @@ jobs:
         with:
           secrets: |
 
-      - name: Run script
+      - name: Setup Node
+        if: ${{ steps.project.outputs.deployment-enabled == 'true' }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: v16.x
+
+      - name: Build Node assets
         env:
-          CI: false
+          CI: true
           SITE_URL: ${{ steps.project.outputs.site-url }}
-        run: CI= npm run build
+        run: |
+          npm ci
+          npm run build
 
       - name: Deploy to IONOS
         if: ${{ steps.project.outputs.deployment-enabled == 'true' }}
