@@ -38,7 +38,7 @@ const useStorage = (file) => {
             }
         );
         
-    }, [file, imageCollection]);
+    }, []);
     return { progress, url, error };
 }
 
