@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useUserAuth } from '../../contexts/UserAuthContext';
 
-function useWindowSize() {
+function useWindowSize() { //Window resize function, checks height of browser and resizes height appropriately
     const [size, setSize] = useState([window.innerHeight]);
     useEffect(() => {
       const handleResize = () => {
@@ -17,7 +17,7 @@ function useWindowSize() {
     return size;
 }
 
-export default function Login() {
+export default function Login() { //Login function
     const height = useWindowSize();
     const appHeight = () => document.documentElement.style.setProperty('--app-height', `${height}px`);
     appHeight();

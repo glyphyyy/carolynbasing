@@ -5,7 +5,7 @@ import arrow from "../../assets/arrow.svg"
 import instagram from "../../assets/instagram.svg"
 import contact from "../../assets/mail.svg"
 
-function useWindowSize() {
+function useWindowSize() { //Window resize function, checks height of browser and resizes height appropriately
   const [size, setSize] = useState([window.innerHeight]);
   useEffect(() => {
     const handleResize = () => {

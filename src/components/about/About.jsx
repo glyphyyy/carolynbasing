@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { HashLink as Link } from 'react-router-hash-link';
 import arrow from "../../assets/arrow.svg"
 
-function useWindowSize() {
+function useWindowSize() { //Window resize function, checks height of browser and resizes height appropriately
   const [size, setSize] = useState([window.innerHeight]);
   useEffect(() => {
     const handleResize = () => {
